@@ -4,8 +4,7 @@ WORKDIR /go/src/app
 
 ENV GO111MODULE=on
 RUN apk add --no-cache \
+    apk add bash \
     alpine-sdk \
     git \
     && go get github.com/pilu/fresh
-
-CMD ["fresh"]
