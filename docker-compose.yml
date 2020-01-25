@@ -2,7 +2,7 @@ version: "3.7"
 services:
   workspace:
     container_name: workspace
-    build: 
+    build:
       context: ./workspace
     ports:
       - 80:80
@@ -10,6 +10,7 @@ services:
     privileged: true
     volumes:
       - ./workspace/project:/go/src/app
+      - ./sqlite/data:/tmp
     links:
       - mysql
     tty: true
@@ -31,8 +32,8 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOSTS=db
+      - PMA_HOSTS=mysql
       - PMA_USER=root
       - PMA_PASSWORD=root
     ports:
-      - 8080:80
+      - 8089:80

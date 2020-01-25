@@ -7,4 +7,5 @@ RUN apk add --no-cache \
     bash \
     alpine-sdk \
     git \
+    sqlite \
     && go get github.com/pilu/fresh
