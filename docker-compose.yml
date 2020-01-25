@@ -13,6 +13,7 @@ services:
       - ./sqlite/data:/tmp
     links:
       - mysql
+      - postgres
     tty: true
   mysql:
     container_name: mysql
@@ -37,3 +38,15 @@ services:
       - PMA_PASSWORD=root
     ports:
       - 8089:80
+  postgres:
+    container_name: postgres
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db
+      PGDATA: /tmp
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
