@@ -3,4 +3,5 @@ mongo/data/*
 nosql/data/*
 sqlite/data/*
 postgresql/data/*
+redis/data/*
 workspace/project/*
