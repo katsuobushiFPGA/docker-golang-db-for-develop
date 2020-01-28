@@ -1,4 +1,6 @@
 mysql/data/*
 mongo/data/*
 nosql/data/*
+sqlite/data/*
 postgresql/data/*
+workspace/project/*
